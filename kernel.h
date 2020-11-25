@@ -1,16 +1,8 @@
-#ifndef KERNEL_H
-#define KERNEL_H
-
 typedef unsigned char uint8;
 typedef unsigned short uint16;
 typedef unsigned int uint32;
 
-#define VGA_ADDRESS 0xB8000
-#define BUFSIZE 2200
-
-uint16* vga_buffer = (uint16*)0xB8000;
-
-#define NULL 0
+//#define NULL 0
 /*
 enum vga_color {
     BLACK,
@@ -31,14 +23,16 @@ enum vga_color {
     WHITE,
 };
 */
-#endif
 
 #include <stdint.h>
+#include <stdbool.h>
+#include <string.h>
+#include <x86intrin.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+//#include <unistd.h>
+//#include <time.h>
+//#include <stdio.h>
 
-#ifndef ASM_H
-#define ASM_H
-
-unsigned char inb(unsigned short port);
-void outb(uint16_t port, uint8_t value);
-
-#endif
+#define kVER "0.002"
